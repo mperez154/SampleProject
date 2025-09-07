@@ -1,24 +1,24 @@
-﻿<h1 id="tableLabel">Weather forecast</h1>
+<h1 class=mat-dialog-title id="tableLabel">Weather forecast</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
 <p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
 
-<table *ngIf="forecasts">
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.date }}</td>
-            <td>{{ forecast.temperatureC }}</td>
-            <td>{{ forecast.temperatureF }}</td>
-            <td>{{ forecast.summary }}</td>
-        </tr>
-    </tbody>
+<table class=mat-table *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th class=mat-header-cell>Date</th>
+      <th class=mat-header-cell>Temp. (C)</th>
+      <th class=mat-header-cell>Temp. (F)</th>
+      <th class=mat-header-cell>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class=mat-row *ngFor="let forecast of forecasts">
+      <td class=mat-cell>{{ forecast.date }}</td>
+      <td class=mat-cell>{{ forecast.temperatureC }}</td>
+      <td class=mat-cell>{{ forecast.temperatureF }}</td>
+      <td class=mat-cell>{{ forecast.summary }}</td>
+    </tr>
+  </tbody>
 </table>
