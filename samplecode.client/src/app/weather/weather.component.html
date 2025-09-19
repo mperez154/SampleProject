@@ -1,0 +1,28 @@
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (!forecasts) {
+<p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+}
+
+@if (forecasts) {
+<table class=mat-table>
+  <thead>
+    <tr>
+      <th class=mat-header-cell>Date</th>
+      <th class=mat-header-cell>Temp. (C)</th>
+      <th class=mat-header-cell>Temp. (F)</th>
+      <th class=mat-header-cell>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (forecast of forecasts; track forecast) {
+    <tr class=mat-row>
+      <td class=mat-cell>{{ forecast.date }}</td>
+      <td class=mat-cell>{{ forecast.temperatureC }}</td>
+      <td class=mat-cell>{{ forecast.temperatureF }}</td>
+      <td class=mat-cell>{{ forecast.summary }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+}
