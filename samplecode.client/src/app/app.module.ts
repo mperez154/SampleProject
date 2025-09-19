@@ -4,10 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StockHistoryComponent } from './stock-history/stock-history.component';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StockHistoryComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
