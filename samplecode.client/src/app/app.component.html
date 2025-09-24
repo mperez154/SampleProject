@@ -1,7 +1,15 @@
-<h1 class=mat-dialog-title id="tableLabel">My Angular App</h1>
-<nav>
-  <button><a routerLink="stock-history">Stocks</a></button>
-  <button><a routerLink="weather">Weather</a></button>
-</nav>
-<router-outlet></router-outlet>
+<div fxLayout="column" fxFlexFill>
+  <app-header></app-header> 
 
+  <div fxFlex>
+    <nav>
+      <button><a routerLink="stock-history">Stocks</a></button>
+      <button><a routerLink="weather">Weather</a></button>
+    </nav>
+
+    <router-outlet></router-outlet> 
+
+  </div>
+
+  <app-footer></app-footer> 
+</div>

@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StockHistoryComponent } from './stock-history/stock-history.component';
 import { WeatherComponent } from './weather/weather.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StockHistoryComponent,
-    WeatherComponent
+    WeatherComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
