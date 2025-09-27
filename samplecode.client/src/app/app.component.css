@@ -11,3 +11,7 @@ th, td {
 table {
   margin: 0 auto;
 }
+
+.navbar {
+  background-color: lawngreen;
+}

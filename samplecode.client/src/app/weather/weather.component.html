@@ -4,25 +4,31 @@
 <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
 }
 
-@if (forecasts) {
-<table class=mat-table>
-  <thead>
-    <tr>
-      <th class=mat-header-cell>Date</th>
-      <th class=mat-header-cell>Temp. (C)</th>
-      <th class=mat-header-cell>Temp. (F)</th>
-      <th class=mat-header-cell>Summary</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (forecast of forecasts; track forecast) {
-    <tr class=mat-row>
-      <td class=mat-cell>{{ forecast.date }}</td>
-      <td class=mat-cell>{{ forecast.temperatureC }}</td>
-      <td class=mat-cell>{{ forecast.temperatureF }}</td>
-      <td class=mat-cell>{{ forecast.summary }}</td>
-    </tr>
+<div class="row justify-content-center">
+  <div class="col-auto">
+
+    @if (forecasts) {
+    <table class="table table-responsive table-hover">
+      <thead>
+        <tr class="table-primary">
+          <th class="table-primary">Date</th>
+          <th class="table-primary">Temp. (C)</th>
+          <th class="table-primary">Temp. (F)</th>
+          <th class="table-primary">Summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (forecast of forecasts; track forecast) {
+        <tr class="table-primary">
+          <td class="table-primary">{{ forecast.date }}</td>
+          <td class="table-primary">{{ forecast.temperatureC }}</td>
+          <td class="table-primary">{{ forecast.temperatureF }}</td>
+          <td class="table-primary">{{ forecast.summary }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
     }
-  </tbody>
-</table>
-}
+
+  </div>
+</div>
