@@ -48,3 +48,6 @@ _ReSharper.*
 bin
 obj
 packages
+
+# SonarQube Scan files
+.sonarqube/

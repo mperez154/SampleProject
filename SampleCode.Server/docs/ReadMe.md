@@ -23,11 +23,15 @@ The backend uses .Net Core for the API, with Entity Framework to connect to a MS
 
 ### Executing program
 
-* Use docker-compose to start up the application locally including the database
+* Use docker-compose to start up the application locally including the database, sonarqube and other services
 
 ```
 docker-compose up
 ```
+## SonarQube Scan
+Once you run docker-compose up command, you can login to SonarQube using localhost:9000 in the browser. Once logged in, you can generate a token used to connect and scan an app. For local development, set the token to never expire. 
+
+After that, create a project and follow the prompts for .Net Core, and execute the commands in Visual Studio's command prompt. Once commands are completed,  you should have a full SonarQube scan with results showing up in the SonarQube website. 
 
 ## Authors
 
