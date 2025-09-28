@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 interface WeatherForecast {
   date: string;
@@ -17,19 +17,16 @@ interface WeatherForecast {
 export class WeatherComponent implements OnInit {
   public forecasts: WeatherForecast[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.getForecasts();
-  }
-
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
+    this.apiService.getWeather().subscribe(
+      (response) => {
+        this.forecasts = response;
+        console.log('Data from API:', this.forecasts);
       },
       (error) => {
-        console.error(error);
+        console.error('Error fetching data:', error);
       }
     );
   }

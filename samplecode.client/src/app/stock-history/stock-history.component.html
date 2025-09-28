@@ -1,1 +1,40 @@
-<p>stock-history works!</p>
+<h1>Stock History: {{ stocks[0]?.ticker }}</h1>
+
+@if (!stocks) {
+<p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+}
+
+<div class="row justify-content-center">
+  <div class="col-auto">
+
+    @if (stocks) {
+    <table class="table table-responsive table-hover">
+      <thead>
+        <tr class="table-primary">
+          <th class="table-primary">Date</th>
+          <th class="table-primary">Open</th>
+          <th class="table-primary">Close</th>
+          <th class="table-primary">High</th>
+          <th class="table-primary">Low</th>
+          <th class="table-primary">Adj Close</th>
+          <th class="table-primary">Volume</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (stock of stocks; track stock) {
+        <tr class="table-primary">
+          <td class="table-primary">{{ stock.date }}</td>
+          <td class="table-primary">{{ stock.open }}</td>
+          <td class="table-primary">{{ stock.close }}</td>
+          <td class="table-primary">{{ stock.high }}</td>
+          <td class="table-primary">{{ stock.low }}</td>
+          <td class="table-primary">{{ stock.adjClose }}</td>
+          <td class="table-primary">{{ stock.volume }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    }
+
+  </div>
+</div>

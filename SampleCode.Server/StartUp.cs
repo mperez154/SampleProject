@@ -26,6 +26,17 @@ namespace SampleCode.Server
         {
             services.AddControllers();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder =>
+                    {
+                        builder.WithOrigins("https://example.com", "https://localhost:64540") // Specify allowed origins
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
+                    });
+            });
+
             // add services to IoC/Dependency Injection
             DependencyInjection dependencyInjection = new(Configuration);
             dependencyInjection.InjectDependencies(services);
@@ -54,6 +65,8 @@ namespace SampleCode.Server
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseRouting();
 
