@@ -51,3 +51,4 @@ packages
 
 # SonarQube Scan files
 .sonarqube/
+/coverage.xml
